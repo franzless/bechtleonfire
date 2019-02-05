@@ -1,17 +1,17 @@
 <template>
 <div>
 <toolbar></toolbar>
-<home></home>  
+<datatable></datatable> 
 </div>  
 </template>
 
 <script>
-import home from "../components/home";
+import datatable from "../components/datatable";
 import toolbar from "../components/toolbar"
 
 export default {
   components: {
-    home,toolbar
+    datatable,toolbar
   }
 };
 </script>

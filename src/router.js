@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import datatable from "./views/datatable_user"
+import login from "./views/login"
+
 
 Vue.use(Router);
 
@@ -13,6 +16,17 @@ export default new Router({
       name: "home",
       component: Home
     },
+    {
+      path: "/login",
+      name: "login",
+      component: login
+    },
+    {
+      path: "/daten",
+      name: "datatable",
+      component: datatable
+    },
+    
     {
       path: "/about",
       name: "about",
