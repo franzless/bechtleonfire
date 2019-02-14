@@ -1,5 +1,6 @@
 <template>
     <div>
+        <v-img :src="bild">
         <v-container fluid fill-height>
         <v-layout justify-center align-center>
         <v-flex xs12 sm9 md7 lg5>
@@ -30,6 +31,7 @@
         </v-flex>
         </v-layout>
         </v-container>
+        </v-img>
     </div>
 </template>
 <script>
@@ -39,7 +41,8 @@ export default {
         return{
             email:'',
             passwort:'',
-            err:{Message:'Fehler',status:false,Code:''},            
+            err:{Message:'Fehler',status:false,Code:''},
+            bild:require("@/assets/LoginBack.jpg")           
         }
     },
     methods:{

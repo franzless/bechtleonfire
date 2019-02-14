@@ -203,11 +203,14 @@ export default {
       },
       datetime(){
           return this.getdatetime(this.datum)
-      }
+      },
+       user(){
+            return this.$store.getters.user
+        }
   }  ,
   firestore(){
     return{
-        stats: db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data')    
+        stats: db.collection('tkn').doc(this.user.email).collection('data')    
     }
     }, 
   
@@ -251,7 +254,7 @@ export default {
                 }else{
                     newdaten = {Datum:this.formattedDate,Dtime:this.datetime,Team:this.team,Beginn:this.beginn,Ende:this.ende,Pause:this.pause}
                                     }
-              db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data').add(newdaten).then(r=>{
+              db.collection('tkn').doc(this.user.email).collection('data').add(newdaten).then(r=>{
             this.beginn=""
             this.ende=""
             this.pause=""

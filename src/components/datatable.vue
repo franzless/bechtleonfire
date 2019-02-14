@@ -193,7 +193,7 @@ export default {
              
     firestore(){
             return{
-                data: db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data')   
+                data: db.collection('tkn').doc(this.user.email).collection('data')   
                 }
             }, 
         
@@ -216,7 +216,7 @@ export default {
         },
               
         del(i){            
-            db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data').doc(i.id).delete()
+            db.collection('tkn').doc(this.user.email).collection('data').doc(i.id).delete()
         },
         edi(i){
             this.e = []
@@ -239,7 +239,7 @@ export default {
             }
         },
         submit(){
-            db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data').doc(this.e.id).set(this.e).then(r=>{
+            db.collection('tkn').doc(this.user.email).collection('data').doc(this.e.id).set(this.e).then(r=>{
                 this.snack={status:true,text:'Daten erfolgreich geändert',color:'success'}
                 this.dialog = false
             }).catch(f=>{
@@ -248,7 +248,7 @@ export default {
             
         },
         canceledit(){
-            this.data = db.collection('tkn').doc('marcel.brodbeck@bechtle.com').collection('data') 
+            this.data = db.collection('tkn').doc(this.user.email).collection('data') 
             this.dialog=false
         },
         exportData(){

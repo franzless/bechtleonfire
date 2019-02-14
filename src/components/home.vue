@@ -56,13 +56,14 @@
 
     <v-btn flat color="primary" @click.native="snack.status = false">Close</v-btn>
   </v-snackbar>
+  <calender></calender>
   </div>
 </template>
 
 <script>
-
+import calender from './calendar'
 export default {
-  
+  components:{calender},
   data: () => ({
                
     
